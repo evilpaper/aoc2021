@@ -48,4 +48,4 @@ const timesChunksIncreased = changesBetweenChunks.filter(
   (item) => item === "increased"
 ).length;
 
-console.log(chunksOfThree);
+console.log(timesChunksIncreased);
