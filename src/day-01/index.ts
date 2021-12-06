@@ -24,28 +24,19 @@ export const timesIncreased = (input: number[]) =>
 
 const spliceIntoChunks = (input: number[], chunkSize: number) => {
   const result = [];
-  while (input.length > 0) {
+  while (input.length > 2) {
     const chunk = input.splice(0, chunkSize);
     result.push(chunk);
   }
   return result;
 };
 
-const chunksOfThree = spliceIntoChunks(depths, 3);
-const sumsOfEachChunk = chunksOfThree.map((chunk) => {
-  return chunk.reduce((pre, cur) => pre + cur, 0);
-});
-const changesBetweenChunks = sumsOfEachChunk.map(
-  (chunk: number, index: number) => {
-    if (index === 0) return "N/A";
-    if (chunk > sumsOfEachChunk[index - 1]) return "increased";
-    if (chunk < sumsOfEachChunk[index - 1]) return "descreased";
-    return "no change";
-  }
-);
+const items = [3, 4, 2, 3, 4];
 
-const timesChunksIncreased = changesBetweenChunks.filter(
-  (item) => item === "increased"
-).length;
+const threes = items.map((item, index) => [
+  item,
+  items[index + 1],
+  items[index + 2],
+]);
 
-console.log(timesChunksIncreased);
+console.log(threes);
