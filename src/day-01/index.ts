@@ -33,10 +33,14 @@ const spliceIntoChunks = (input: number[], chunkSize: number) => {
 
 const items = [3, 4, 2, 3, 4];
 
-const threes = items.map((item, index) => [
-  item,
-  items[index + 1],
-  items[index + 2],
-]);
+const threes = items.map((item, index) => {
+  if (items[index + 1] === undefined) {
+    return [item];
+  }
+  if (items[index + 2] === undefined) {
+    return [item, items[index + 1]];
+  }
+  return [item, items[index + 1], items[index + 2]];
+});
 
 console.log(threes);
