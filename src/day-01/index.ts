@@ -10,6 +10,8 @@ const depths = readFileSync(
   .split("\n")
   .map((depth) => Number(depth));
 
+// Part one
+
 export const timesIncreased = (input: number[]) =>
   input
     .map((depth: number, index: number) => {
@@ -22,25 +24,32 @@ export const timesIncreased = (input: number[]) =>
 
 // console.log(timesIncreased(depths));
 
-const spliceIntoChunks = (input: number[], chunkSize: number) => {
-  const result = [];
-  while (input.length > 2) {
-    const chunk = input.splice(0, chunkSize);
-    result.push(chunk);
-  }
-  return result;
-};
+// Part two
 
 const items = [3, 4, 2, 3, 4];
 
-const threes = items.map((item, index) => {
-  if (items[index + 1] === undefined) {
-    return [item];
-  }
-  if (items[index + 2] === undefined) {
-    return [item, items[index + 1]];
-  }
-  return [item, items[index + 1], items[index + 2]];
-});
+const threes = (items: any) =>
+  items.map((item: number, index: number) => {
+    if (items[index + 1] === undefined) {
+      return [item];
+    }
+    if (items[index + 2] === undefined) {
+      return [item, items[index + 1]];
+    }
+    return [item, items[index + 1], items[index + 2]];
+  });
 
-console.log(threes);
+const sums = threes(depths).map(
+  (three: number[]) => three.reduce((cur: any, pre: any) => cur + pre),
+  0
+);
+
+const variations = (items: number[]) =>
+  items.map((item: number, index: number) => {
+    if (index === 0) return "N/A";
+    if (item > items[index - 1]) return "increased";
+    if (item < items[index - 1]) return "descreased";
+    return "no change";
+  });
+
+console.log(variations(sums).filter((item) => item === "increased").length);
