@@ -22,11 +22,13 @@ export const timesIncreased = (input: number[]) =>
     })
     .filter((depth) => depth === "increased").length;
 
-// console.log(timesIncreased(depths));
+console.log(
+  `Solution to part one. The depth has increased ${timesIncreased(
+    depths
+  )} times`
+);
 
 // Part two
-
-const items = [3, 4, 2, 3, 4];
 
 const threes = (items: any) =>
   items.map((item: number, index: number) => {
@@ -52,4 +54,10 @@ const variations = (items: number[]) =>
     return "no change";
   });
 
-console.log(variations(sums).filter((item) => item === "increased").length);
+console.log(
+  `Solution to part two. The depth has increased ${
+    variations(sums).filter((item) => item === "increased").length
+  } times`
+);
+
+console.log();
