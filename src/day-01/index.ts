@@ -59,5 +59,3 @@ console.log(
     variations(sums).filter((item) => item === "increased").length
   } times`
 );
-
-console.log();
