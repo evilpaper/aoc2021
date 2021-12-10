@@ -7,8 +7,17 @@
   "dependencies": {
     "typescript": "^4.5.2"
   },
+  "scripts": {
+    "test": "jest"
+  },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-typescript": "^7.16.0",
+    "@types/jest": "^27.0.3",
     "@types/node": "^16.11.11",
+    "babel-jest": "^27.4.4",
+    "jest": "^27.4.4",
     "ts-node": "^10.4.0",
     "tslib": "^2.3.1"
   }
