@@ -1,7 +1,8 @@
-function sum(a, b) {
-  return a + b;
-}
+import { depths } from "./index";
 
-test("adds 1 + 2 to equal 3", () => {
-  expect(sum(1, 2)).toBe(3);
-});
+// Part one
+
+// Convert text to array of numbers
+// Convert array of numbers to array of changes in depth (increased, decreased, no change)
+// Filter out increased
+// Count increased

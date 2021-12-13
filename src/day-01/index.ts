@@ -1,9 +1,9 @@
 import { readFileSync } from "fs";
 import { resolve, dirname } from "path";
 
-const depths = readFileSync(
+export const depths = readFileSync(
   // @ts-ignore
-  resolve(dirname(require.main.filename), "data.txt"),
+  resolve(dirname(require.main.filename), "input.txt"),
   "utf8"
 )
   .trim()
