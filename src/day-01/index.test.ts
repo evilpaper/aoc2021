@@ -6,3 +6,8 @@ import { depths } from "./index";
 // Convert array of numbers to array of changes in depth (increased, decreased, no change)
 // Filter out increased
 // Count increased
+
+// Part two
+
+// Convert array of numbers to array of numbers in blocks of three
+// ...
