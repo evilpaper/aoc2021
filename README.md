@@ -14,9 +14,15 @@ Some solutions for the 2021 edition Advent of Code.
     ```
 
 1.  **Run individual solutions**
-    Run solution and console.log the result
+    Run solution (you might need to console.log the result to see it;))
 
     ```shell
     ts-node src/day-X
 
+    ```
+
+1.  **Generate a new solution from a template**
+
+    ```shell
+    DAY=0X yarn new
     ```

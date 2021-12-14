@@ -8,6 +8,7 @@
     "typescript": "^4.5.2"
   },
   "scripts": {
+    "new": "mkdir -p ./src/day-$DAY && cp -r ./_template/ ./src/day-$DAY",
     "test": "jest"
   },
   "devDependencies": {
