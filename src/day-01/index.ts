@@ -12,21 +12,30 @@ export const depths = readFileSync(
 
 // Part one
 
+export const convertToDirections = (items: number[]) => {
+  return items.map((item: number, index: number) => {
+    if (index === 0) return "N/A";
+    if (item > items[index - 1]) return "increased";
+    if (item < items[index - 1]) return "decreased";
+    return "no change";
+  });
+};
+
 export const timesIncreased = (input: number[]) =>
   input
     .map((depth: number, index: number) => {
       if (index === 0) return "N/A";
       if (depth > depths[index - 1]) return "increased";
-      if (depth < depths[index - 1]) return "descreased";
+      if (depth < depths[index - 1]) return "decreased";
       return "no change";
     })
     .filter((depth) => depth === "increased").length;
 
-console.log(
-  `Solution to part one. The depth has increased ${timesIncreased(
-    depths
-  )} times`
-);
+// console.log(
+//   `Solution to part one. The depth has increased ${timesIncreased(
+//     depths
+//   )} times`
+// );
 
 // Part two
 
@@ -50,7 +59,7 @@ const variations = (items: number[]) =>
   items.map((item: number, index: number) => {
     if (index === 0) return "N/A";
     if (item > items[index - 1]) return "increased";
-    if (item < items[index - 1]) return "descreased";
+    if (item < items[index - 1]) return "decreased";
     return "no change";
   });
 
