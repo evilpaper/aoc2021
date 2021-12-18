@@ -25,15 +25,9 @@ export const getIncreasedOnly = (items: string[]) => {
   return items.filter((item) => item === "increased");
 };
 
-export const timesIncreased = (input: number[]) =>
-  input
-    .map((depth: number, index: number) => {
-      if (index === 0) return "N/A";
-      if (depth > depths[index - 1]) return "increased";
-      if (depth < depths[index - 1]) return "decreased";
-      return "no change";
-    })
-    .filter((depth) => depth === "increased").length;
+export const getLength = (items: string[]) => {
+  return items.length;
+};
 
 // console.log(
 //   `Solution to part one. The depth has increased ${timesIncreased(

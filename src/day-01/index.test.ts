@@ -1,4 +1,4 @@
-import { convertToDirections, getIncreasedOnly } from "./index";
+import { convertToDirections, getIncreasedOnly, getLength } from "./index";
 
 const testData = [159, 170, 171, 170, 168];
 
@@ -7,7 +7,7 @@ const testData = [159, 170, 171, 170, 168];
 // 1. Convert text to array of numbers
 
 // 2. Convert array of numbers to array of direction of change in depth (increased, decreased, no change)
-test("Convert array of numbers to array of changes in depth (increased, decreased, no change)", () => {
+test("Should convert array of numbers to array of changes in depth (increased, decreased, no change)", () => {
   expect(convertToDirections(testData)).toEqual([
     "N/A",
     "increased",
@@ -18,13 +18,17 @@ test("Convert array of numbers to array of changes in depth (increased, decrease
 });
 
 // 3. Filter out increased
-test("Filter out increased", () => {
+test("Should filter out increased", () => {
   expect(getIncreasedOnly(convertToDirections(testData))).toEqual([
     "increased",
     "increased",
   ]);
 });
+
 // 4. Count increased
+test("Should count increased", () => {
+  expect(getLength(getIncreasedOnly(convertToDirections(testData)))).toBe(2);
+});
 
 // Part two
 
