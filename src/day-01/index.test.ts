@@ -1,4 +1,4 @@
-import { convertToDirections } from "./index";
+import { convertToDirections, getIncreasedOnly } from "./index";
 
 const testData = [159, 170, 171, 170, 168];
 
@@ -18,6 +18,12 @@ test("Convert array of numbers to array of changes in depth (increased, decrease
 });
 
 // 3. Filter out increased
+test("Filter out increased", () => {
+  expect(getIncreasedOnly(convertToDirections(testData))).toEqual([
+    "increased",
+    "increased",
+  ]);
+});
 // 4. Count increased
 
 // Part two

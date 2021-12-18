@@ -26,3 +26,9 @@ Some solutions for the 2021 edition Advent of Code.
     ```shell
     DAY=0X yarn new
     ```
+
+1.  **Run tests**
+
+    ```shell
+    yarn test
+    ```

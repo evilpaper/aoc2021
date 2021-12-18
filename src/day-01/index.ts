@@ -21,6 +21,10 @@ export const convertToDirections = (items: number[]) => {
   });
 };
 
+export const getIncreasedOnly = (items: string[]) => {
+  return items.filter((item) => item === "increased");
+};
+
 export const timesIncreased = (input: number[]) =>
   input
     .map((depth: number, index: number) => {
