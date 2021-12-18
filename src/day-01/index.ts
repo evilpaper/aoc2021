@@ -29,11 +29,13 @@ export const getLength = (items: string[]) => {
   return items.length;
 };
 
-// console.log(
-//   `Solution to part one. The depth has increased ${timesIncreased(
-//     depths
-//   )} times`
-// );
+export const solutionPart1 = (depths: number[]) => {
+  return getLength(getIncreasedOnly(convertToDirections(depths)));
+};
+
+console.log(
+  `Solution to part one. The depth has increased ${solutionPart1(depths)} times`
+);
 
 // Part two
 
