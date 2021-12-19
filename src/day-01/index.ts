@@ -40,15 +40,17 @@ console.log(
 // Part two
 
 export const convertToThrees = (items: number[]) => {
-  return items.map((item: number, index: number) => {
-    if (items[index + 1] === undefined) {
-      return [item];
-    }
-    if (items[index + 2] === undefined) {
-      return [item, items[index + 1]];
-    }
-    return [item, items[index + 1], items[index + 2]];
-  });
+  return items
+    .map((item: number, index: number) => {
+      if (items[index + 1] === undefined) {
+        return [item];
+      }
+      if (items[index + 2] === undefined) {
+        return [item, items[index + 1]];
+      }
+      return [item, items[index + 1], items[index + 2]];
+    })
+    .filter((item) => item.length === 3);
 };
 
 // Old stuff below

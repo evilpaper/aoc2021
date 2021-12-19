@@ -43,8 +43,6 @@ test("Should convert to three-measurement sliding window", () => {
     [159, 170, 171],
     [170, 171, 170],
     [171, 170, 168],
-    [170, 168],
-    [168],
   ]);
 });
 // Sum each block
