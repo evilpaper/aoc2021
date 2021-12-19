@@ -1,4 +1,9 @@
-import { convertToDirections, getIncreasedOnly, getLength } from "./index";
+import {
+  convertToDirections,
+  getIncreasedOnly,
+  getLength,
+  convertToThrees,
+} from "./index";
 
 const testData = [159, 170, 171, 170, 168];
 
@@ -32,5 +37,15 @@ test("Should count increased", () => {
 
 // Part two
 
-// Convert array of numbers to array of numbers in blocks of three
-// ...
+// Convert array of numbers to array blocks of three
+test("Should convert to three-measurement sliding window", () => {
+  expect(convertToThrees(testData)).toEqual([
+    [159, 170, 171],
+    [170, 171, 170],
+    [171, 170, 168],
+    [170, 168],
+    [168],
+  ]);
+});
+// Sum each block
+// Convert to directions

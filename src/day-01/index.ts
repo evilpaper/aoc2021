@@ -29,8 +29,8 @@ export const getLength = (items: string[]) => {
   return items.length;
 };
 
-export const solutionPart1 = (depths: number[]) => {
-  return getLength(getIncreasedOnly(convertToDirections(depths)));
+export const solutionPart1 = (items: number[]) => {
+  return getLength(getIncreasedOnly(convertToDirections(items)));
 };
 
 console.log(
@@ -38,6 +38,20 @@ console.log(
 );
 
 // Part two
+
+export const convertToThrees = (items: number[]) => {
+  return items.map((item: number, index: number) => {
+    if (items[index + 1] === undefined) {
+      return [item];
+    }
+    if (items[index + 2] === undefined) {
+      return [item, items[index + 1]];
+    }
+    return [item, items[index + 1], items[index + 2]];
+  });
+};
+
+// Old stuff below
 
 const threes = (items: any) =>
   items.map((item: number, index: number) => {
