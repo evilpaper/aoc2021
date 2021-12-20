@@ -53,6 +53,12 @@ export const convertToThrees = (items: number[]) => {
     .filter((item) => item.length === 3);
 };
 
+export const sumEachThrees = (items: any) => {
+  return items.map((item: number[]) => {
+    return item.reduce((cur: any, pre: any) => cur + pre);
+  });
+};
+
 // Old stuff below
 
 const threes = (items: any) =>

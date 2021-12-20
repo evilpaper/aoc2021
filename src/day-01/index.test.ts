@@ -3,6 +3,7 @@ import {
   getIncreasedOnly,
   getLength,
   convertToThrees,
+  sumEachThrees,
 } from "./index";
 
 const testData = [159, 170, 171, 170, 168];
@@ -22,7 +23,7 @@ test("Should convert array of numbers to array of changes in depth (increased, d
   ]);
 });
 
-// 3. Filter out increased
+// 3. Filter out "increased"
 test("Should filter out increased", () => {
   expect(getIncreasedOnly(convertToDirections(testData))).toEqual([
     "increased",
@@ -30,14 +31,14 @@ test("Should filter out increased", () => {
   ]);
 });
 
-// 4. Count increased
+// 4. Count "increased"
 test("Should count increased", () => {
   expect(getLength(getIncreasedOnly(convertToDirections(testData)))).toBe(2);
 });
 
 // Part two
 
-// Convert array of numbers to array blocks of three
+// 1. Convert array of numbers to array blocks of three
 test("Should convert to three-measurement sliding window", () => {
   expect(convertToThrees(testData)).toEqual([
     [159, 170, 171],
@@ -45,5 +46,12 @@ test("Should convert to three-measurement sliding window", () => {
     [171, 170, 168],
   ]);
 });
-// Sum each block
-// Convert to directions
+
+// 2. Sum each block
+test("Should sum each three-measurment", () => {
+  expect(sumEachThrees(convertToThrees(testData))).toEqual([500, 511, 509]);
+});
+
+// 3. Convert to "directions"
+
+// 4. Filter out "increased"
