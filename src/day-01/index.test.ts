@@ -52,6 +52,6 @@ test("Should sum each three-measurment", () => {
   expect(sumEachThrees(convertToThrees(testData))).toEqual([500, 511, 509]);
 });
 
-// 3. Convert to "directions"
+// 3. Convert to "directions" - Already exists in part one
 
-// 4. Filter out "increased"
+// 4. Filter out "increased" - Already exists in part two
