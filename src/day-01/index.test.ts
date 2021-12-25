@@ -10,7 +10,7 @@ const testData = [159, 170, 171, 170, 168];
 
 // Part one
 
-// 1. Convert text to array of numbers
+// 1. Convert txt file to array of numbers
 
 // 2. Convert array of numbers to array of direction of change in depth (increased, decreased, no change)
 test("Should convert array of numbers to array of changes in depth (increased, decreased, no change)", () => {
