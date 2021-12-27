@@ -34,7 +34,9 @@ export const solutionPart1 = (items: number[]) => {
 };
 
 console.log(
-  `Solution to part one. The depth has increased ${solutionPart1(depths)} times`
+  `Solution Day 01 · Part One. The depth has increased ${solutionPart1(
+    depths
+  )} times`
 );
 
 // Part two
@@ -66,5 +68,7 @@ export const solutionPart2 = (items: number[]) => {
 };
 
 console.log(
-  `Solution to part two. The depth has increased ${solutionPart2(depths)} times`
+  `Solution Day 02 · Part Two. The depth has increased ${solutionPart2(
+    depths
+  )} times`
 );
