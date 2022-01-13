@@ -33,10 +33,10 @@ export const solutionPart1 = (items: number[]) => {
   return getLength(getIncreasedOnly(convertToDirections(items)));
 };
 
-export const increases = depths.reduce((prev, curr, index) => {
-  // ... do magic here
-  return null;
-});
+export const increases = (depths: number[]) =>
+  depths.reduce((acc, cur, index) => {
+    return cur > depths[index - 1] ? acc + 1 : acc;
+  }, 0);
 
 console.log(
   `Solution Day 01 · Part One. The depth has increased ${solutionPart1(

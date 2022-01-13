@@ -4,6 +4,8 @@ import {
   getLength,
   convertToThrees,
   sumEachThrees,
+  increases,
+  depths,
 } from "./index";
 
 const testData = [159, 170, 171, 170, 168];
@@ -34,6 +36,10 @@ test("Should filter out increased", () => {
 // 4. Count "increased"
 test("Should count increased", () => {
   expect(getLength(getIncreasedOnly(convertToDirections(testData)))).toBe(2);
+});
+
+test("Increases should return number of incrases", () => {
+  expect(increases(testData)).toBe(2);
 });
 
 // Part two
