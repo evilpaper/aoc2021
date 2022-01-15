@@ -29,17 +29,19 @@ export const getLength = (items: string[]) => {
   return items.length;
 };
 
+// Same think but witj a combinator instead
 export const solutionPart1 = (items: number[]) => {
   return getLength(getIncreasedOnly(convertToDirections(items)));
 };
 
+// Bonus: same thing but with one combinator instaed
 export const increases = (depths: number[]) =>
   depths.reduce((acc, cur, index) => {
     return cur > depths[index - 1] ? acc + 1 : acc;
   }, 0);
 
 console.log(
-  `Solution Day 01 · Part One. The depth has increased ${solutionPart1(
+  `Solution Day 01 · Part One. The depth has increased ${increases(
     depths
   )} times`
 );
@@ -72,8 +74,18 @@ export const solutionPart2 = (items: number[]) => {
   );
 };
 
+// Bonus: same thing but with one combinator instaed
+export const increasesSlidingWindowOfThree = (depths: number[]) =>
+  depths.reduce((acc, cur, index) => {
+    if (index < 3) return acc;
+    const currentBlock = cur + depths[index - 1] + depths[index - 2];
+    const previousBlock =
+      depths[index - 1] + depths[index - 2] + depths[index - 3];
+    return currentBlock > previousBlock ? acc + 1 : acc;
+  }, 0);
+
 console.log(
-  `Solution Day 02 · Part Two. The depth has increased ${solutionPart2(
+  `Solution Day 02 · Part Two. The depth has increased ${increasesSlidingWindowOfThree(
     depths
   )} times`
 );

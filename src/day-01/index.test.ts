@@ -5,6 +5,7 @@ import {
   convertToThrees,
   sumEachThrees,
   increases,
+  increasesSlidingWindowOfThree,
   depths,
 } from "./index";
 
@@ -38,7 +39,8 @@ test("Should count increased", () => {
   expect(getLength(getIncreasedOnly(convertToDirections(testData)))).toBe(2);
 });
 
-test("Increases should return number of incrases", () => {
+// Bonus. Using combinator instead
+test("Increases should return number of increases", () => {
   expect(increases(testData)).toBe(2);
 });
 
@@ -54,10 +56,15 @@ test("Should convert to three-measurement sliding window", () => {
 });
 
 // 2. Sum each block
-test("Should sum each three-measurment", () => {
+test("Should sum each three-measurement", () => {
   expect(sumEachThrees(convertToThrees(testData))).toEqual([500, 511, 509]);
 });
 
 // 3. Convert to "directions" - Already exists in part one
 
 // 4. Filter out "increased" - Already exists in part two
+
+// Bonus: using combinator instead
+test("increasesBlocksOfThree should return number of increases", () => {
+  expect(increasesSlidingWindowOfThree(depths)).toBe(1395);
+});
